@@ -1,0 +1,17 @@
+{
+  "name": "outdoors",
+  "version": "1.0.0",
+  "description": "outdoor trips",
+  "main": "index.html",
+  "scripts": {
+    "compile": "sass sass/main.scss css/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.69.6"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}
