@@ -1,74 +1,3 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #777;
-  padding: 30px;
-}
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
-
-.logo-box {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-}
-
-.logo {
-  height: 35px;
-}
-
-.text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-}
-
-.heading-primary-main {
-  display: block;
-  font-size: 60px;
-  font-weight: 400;
-  letter-spacing: 35px;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-}
-
-.heading-primary-sub {
-  display: block;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 17.4px;
-  margin-bottom: 60px;
-  animation-name: moveInRight;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-}
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -105,6 +34,23 @@ body {
     opacity: 1;
   }
 }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -115,18 +61,23 @@ body {
   transition: all 0.2s;
   position: relative;
 }
-
-.btn:hover {
+.btn:link:hover,
+.btn:visited:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
-.btn:active {
+.btn:link:hover::after,
+.btn:visited:hover::after {
+  transform: scale(1.4, 1.6);
+  opacity: 0;
+}
+.btn:link:active,
+.btn:visited:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
-
-.btn::after {
+.btn:link::after,
+.btn:visited::after {
   content: "";
   display: inline-block;
   height: 100%;
@@ -138,27 +89,70 @@ body {
   z-index: -1;
   transition: all 0.4s;
 }
-
-.btn:hover::after {
-  transform: scale(1.4, 1.6);
-  opacity: 0;
-}
-
-.btn-white {
+.btn:link.btn-white,
+.btn:visited.btn-white {
   background-color: #fff;
   color: #777;
 }
-
-.btn-white::after {
+.btn:link.btn-white::after,
+.btn:visited.btn-white::after {
   background-color: #fff;
 }
-
-.btn-animated {
+.btn:link.btn-animated,
+.btn:visited.btn-animated {
   animation-name: moveInButton;
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-delay: 0.75s;
   animation-fill-mode: backwards;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+.header .logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+.header .logo-box .logo {
+  height: 35px;
+}
+.header .text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.header .text-box .heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+}
+.header .text-box .heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+.header .text-box .heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+  margin-bottom: 60px;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
 /*# sourceMappingURL=style.css.map */
